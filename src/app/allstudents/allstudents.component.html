@@ -1,0 +1,116 @@
+<!-- <div class="Parent">
+    <div>
+        <label for="">Filter:</label>
+        <input type="text" [(ngModel)]="term" (keyup)="filtered()">
+    </div>
+
+    
+    <div>
+        <label for="">Pagination:</label>
+        <select name="" id="" [(ngModel)]="pageno" (change)="getpages()">
+            <option></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    <div class="child">
+        <section>
+            <label for="">Sortby:</label>
+            <select name="" id="" [(ngModel)]="sortby">
+                <option value=""></option>
+                <option value="name">Name</option>
+                <option value="gender">Gender</option>
+            </select>
+        </section>
+
+        <section>
+            <label for="">Order:</label>
+            <select name="" id="" [(ngModel)]="order">
+                <option value=""></option>
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+        </section>
+        <section>
+            <button (click)="sorting()">Sort</button>
+        </section>
+    </div>
+
+</div>
+<br> -->
+<div class="Parent">
+    <div>
+        <label for="">Filter:</label>
+        <input type="text" [(ngModel)]="queries.filter" (keyup)="loaddata()">
+    </div>
+
+    <div>
+        <label for="">Pagination:</label>
+        <select name="" id="" [(ngModel)]="queries.pageNO" (change)="loaddata()">
+            <option></option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+        </select>
+    </div>
+    <div class="child">
+        <section>
+            <label for="">Sortby:</label>
+            <select name="" id="" [(ngModel)]="queries.sortBy">
+                <option value=""></option>
+                <option value="name">Name</option>
+                <option value="gender">Gender</option>
+            </select>
+        </section>
+
+        <section>
+            <label for="">Order:</label>
+            <select name="" id="" [(ngModel)]="queries.order">
+                <option value=""></option>
+                <option value="asc">Ascending</option>
+                <option value="desc">Descending</option>
+            </select>
+        </section>
+        <section>
+            <button (click)="loaddata()">Sort</button>
+        </section>
+    </div>
+
+</div>
+<br>
+<table>
+    <thead>
+        <tr>
+            <th rowspan="2">ID</th>
+            <th rowspan="2">Name</th>
+            <th rowspan="2">Gender</th>
+            <th rowspan="2">Mobile</th>
+            <th rowspan="2">Batch</th>
+            <th colspan="2">Adress</th>
+            <th colspan="2">company</th>
+            <th colspan="2" rowspan="2">Action</th>
+        </tr>
+        <tr>
+            <th>District</th>
+            <th>State</th>
+            <th>Name</th>
+            <th>Package</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let student of studentsdata">
+            <td>{{student.id}}</td>
+            <td>{{student.name}}</td>
+            <td>{{student.gender}}</td>
+            <td>{{student.mobile}}</td>
+            <td>{{student.batch}}</td>
+            <td>{{student.address.district}}</td>
+            <td>{{student.address.state}}</td>
+            <td>{{student.company.name}}</td>
+            <td>{{student.company.package}}</td>
+            <td> <button>Edit</button></td>
+            <td><button (click)="deleted(student.id)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

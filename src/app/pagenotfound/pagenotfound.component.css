@@ -1,0 +1,13 @@
+
+.parent{
+    height: 100%;
+    width: 100%;
+    background-color:rgb(193, 169, 216);
+    overflow: hidden;
+}
+h1{
+    color: rgb(165, 13, 13);
+    font-size: 50px;
+    text-align: center;
+    padding-top: 17%;
+}

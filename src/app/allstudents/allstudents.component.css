@@ -1,0 +1,35 @@
+table{
+   
+    border:2px solid white;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+tr,th,td{
+    border: 1px solid rgb(10, 8, 8);
+    
+}
+button{
+    border: 0;
+    height: 30px;
+    width: 60px;
+    background-color: skyblue;
+    border-radius: 5px;
+}
+.Parent{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+input{
+    border-radius: 50px;
+}
+select{
+    border-radius: 50px;
+}
+.child{
+    display: flex;
+}
+.child section{
+    padding-left: 10px;
+}

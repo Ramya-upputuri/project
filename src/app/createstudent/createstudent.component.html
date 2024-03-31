@@ -1,0 +1,115 @@
+<form action="" [formGroup]="createstudent">
+    <h5>Student Information</h5>
+    <label for="">Name:</label>
+    <input type="text" formControlName="name">
+    <br>
+
+    <label for="">Gender:</label>
+    <input type="radio" formControlName="gender" value="male">
+    <label for="">Male</label>
+    <input type="radio" formControlName="gender" value="female">
+    <label for="">Female</label>
+    <br>
+
+    <label for="">Mobile:</label>
+    <input type="number" formControlName="mobile">
+    <br>
+
+    <label for="">Email:</label>
+    <input type="email" formControlName="email">
+    <br>
+
+    <label for="">Batch:</label>
+    <input type="date" formControlName="batch">
+    <br>
+    <div formGroupName="address">
+        <br>
+        <h5>Address</h5>
+        <label for="">City:</label>
+        <input type="text" formControlName="city">
+        <br>
+
+        <label for="">Mandal:</label>
+        <input type="text" formControlName="mandal">
+        <br>
+
+        <label for="">District:</label>
+        <input type="text" formControlName="district">
+        <br>
+
+        <label for="">State:</label>
+        <input type="text" formControlName="state">
+        <br>
+
+        <label for="">Pincode:</label>
+        <input type="number" formControlName="pincode">
+    </div>
+    <h5>Education</h5>
+    <div formArrayName="education">
+        <div *ngFor="let education of educationform.controls, let i=index">
+            <div formGroupName="{{i}}">
+                <label for="">Qualification:</label>
+                <input type="text" formControlName="qualification">
+                <br>
+
+                <label for="">Year:</label>
+                <input type="number" formControlName="year">
+                <br>
+
+                <label for="">Percentage:</label>
+                <input type="number" formControlName="percentage">
+                <br><br>
+                <button (click)="delete(i)">Delete</button>
+            </div>
+        </div>
+    </div>
+    <br>
+    <button (click)="add()">Add</button>
+    <br><br>
+    <h5>Company</h5>
+    <div formGroupName="company">
+      <label for="">Name:</label>
+      <input type="text" formControlName="name">
+      <br>
+
+      <label for="">Location:</label>
+      <input type="text" formControlName="location">
+      <br>
+
+      <label for="">Package:</label>
+      <input type="number" formControlName="package">
+      <br>
+
+      <label for="">Offer Date:</label>
+      <input type="date" formControlName="offerdate">
+      <br>
+    </div>
+
+    <br>
+    <label for="">Source Type:</label>
+    <input type="radio" formControlName="sourcetype" value="direct">
+    <label for="">Direct</label>
+    <input type="radio" formControlName="sourcetype" value="refer">
+    <label for="">Refer</label>
+     <br>
+
+     <div *ngIf="createstudent.get('sourcetype')?.value=='direct'">
+    <label for="">SourceForm:</label>
+    <input type="radio"  formControlName="sourceform" value="media">
+    <label for="">Social Media</label>
+    <input type="radio"  formControlName="sourceform" value="office">
+    <label for="">Office</label>
+    </div>
+    <br>
+
+    <div *ngIf="createstudent.get('sourcetype')?.value=='refer'">
+    <h5>Referral takes</h5>
+    <label for="">Referral Person's:</label>
+    <input type="text" formControlName="refferalpersons">
+    <br>
+    <label for="">Referral Name:</label>
+    <input type="text" formControlName="refferalname">
+   </div>
+   <br>
+   <button (click)="submit()">Submit</button>
+</form>

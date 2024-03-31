@@ -1,0 +1,17 @@
+label{
+    width: 150px;
+    margin-top: 15px;
+}
+form{
+    padding: 50px;
+}
+h5{
+    text-decoration: underline;
+}
+button{
+    border: 0;
+    height: 30px;
+    width: 100px;
+    background-color: skyblue;
+    border-radius: 5px;
+}
